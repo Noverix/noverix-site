@@ -33,9 +33,28 @@ jobs:
           rm -rf ./_site
           mkdir -p ./_site
           rsync -av \
-            --exclude='.git/' \
-            --exclude='.github/' \
-            --exclude='_site/' \
+            --prune-empty-dirs \
+            --include='*/' \
+            --include='*.html' \
+            --include='*.css' \
+            --include='*.js' \
+            --include='*.mjs' \
+            --include='*.json' \
+            --include='*.xml' \
+            --include='*.txt' \
+            --include='*.ico' \
+            --include='*.png' \
+            --include='*.jpg' \
+            --include='*.jpeg' \
+            --include='*.gif' \
+            --include='*.svg' \
+            --include='*.webp' \
+            --include='*.avif' \
+            --include='*.woff' \
+            --include='*.woff2' \
+            --include='*.ttf' \
+            --include='*.otf' \
+            --exclude='*' \
             ./ ./_site/
 
       - name: Upload artifact
