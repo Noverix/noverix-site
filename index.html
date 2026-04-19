@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Noverix | Future-ready digital ventures</title>
+    <meta
+      name="description"
+      content="Noverix is a holding company focused on simple AI solutions, digital services, and future digital ventures."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="background-glow" aria-hidden="true"></div>
+
+    <header class="site-header container">
+      <a href="#hero" class="brand" aria-label="Noverix home">
+        <img src="./logo.png" alt="Noverix logo" class="brand-logo" />
+        <span class="brand-name">Noverix</span>
+      </a>
+      <div class="language-switcher" role="group" aria-label="Language switcher">
+        <button type="button" class="lang-btn is-active" data-lang="en">EN</button>
+        <button type="button" class="lang-btn" data-lang="pt">PT</button>
+        <button type="button" class="lang-btn" data-lang="fr">FR</button>
+      </div>
+    </header>
+
+    <main>
+      <section id="hero" class="section hero container">
+        <p class="eyebrow" data-i18n="heroEyebrow">Holding company for digital growth</p>
+        <h1 data-i18n="heroTitle">Simple AI. Strong digital services. Future ventures.</h1>
+        <p class="section-copy" data-i18n="heroText">
+          Noverix builds and supports modern digital initiatives with practical execution,
+          clear strategy, and long-term value.
+        </p>
+        <div class="hero-actions">
+          <a class="button primary" href="#focus" data-i18n="heroPrimary">Explore focus areas</a>
+          <a class="button secondary" href="#contact" data-i18n="heroSecondary">Get in touch</a>
+        </div>
+      </section>
+
+      <section id="about" class="section container card-block">
+        <h2 data-i18n="aboutTitle">About</h2>
+        <p class="section-copy" data-i18n="aboutText">
+          We are a focused holding company investing in and operating practical digital
+          businesses. Our approach is fast, lean, and driven by outcomes.
+        </p>
+      </section>
+
+      <section id="focus" class="section container">
+        <h2 data-i18n="focusTitle">Focus areas</h2>
+        <div class="card-grid">
+          <article class="card">
+            <h3 data-i18n="focus1Title">Simple AI solutions</h3>
+            <p data-i18n="focus1Text">Useful AI integrations that solve real business problems.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="focus2Title">Digital services</h3>
+            <p data-i18n="focus2Text">Reliable products, operations, and service delivery for digital teams.</p>
+          </article>
+          <article class="card">
+            <h3 data-i18n="focus3Title">Future digital ventures</h3>
+            <p data-i18n="focus3Text">New opportunities built for the next generation of online value.</p>
+          </article>
+        </div>
+      </section>
+
+      <section id="support" class="section container card-block">
+        <h2 data-i18n="supportTitle">Who we support</h2>
+        <p class="section-copy" data-i18n="supportText">
+          Founders, operators, and businesses seeking practical innovation without unnecessary complexity.
+        </p>
+      </section>
+
+      <section id="status" class="section container card-block">
+        <h2 data-i18n="statusTitle">Current status</h2>
+        <p class="section-copy" data-i18n="statusText">
+          Noverix is actively developing projects and partnerships. We are open to strategic collaborations.
+        </p>
+      </section>
+
+      <section id="contact" class="section container card-block">
+        <h2 data-i18n="contactTitle">Contact</h2>
+        <p class="section-copy" data-i18n="contactText">Let’s discuss opportunities and digital growth goals.</p>
+        <a class="button primary" href="mailto:contact@noverix.com" data-i18n="contactButton">contact@noverix.com</a>
+      </section>
+    </main>
+
+    <footer class="site-footer container">
+      <small>© <span id="year"></span> Noverix</small>
+    </footer>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
