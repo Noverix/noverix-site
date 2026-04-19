@@ -98,7 +98,9 @@ function applyLanguage(lang) {
   document.documentElement.lang = lang;
 
   langButtons.forEach((btn) => {
-    btn.classList.toggle('is-active', btn.dataset.lang === lang);
+    const isActive = btn.dataset.lang === lang;
+    btn.classList.toggle('is-active', isActive);
+    btn.setAttribute('aria-pressed', String(isActive));
   });
 }
 
