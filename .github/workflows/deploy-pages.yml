@@ -1,0 +1,68 @@
+name: Deploy static site to GitHub Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages-deployment
+  cancel-in-progress: false
+
+jobs:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Pages
+        uses: actions/configure-pages@v5
+
+      - name: Prepare site artifact
+        run: |
+          SITE_DIR="${GITHUB_WORKSPACE}/_site"
+          rm -rf "${SITE_DIR}"
+          mkdir -p "${SITE_DIR}"
+          rsync -av \
+            --prune-empty-dirs \
+            --include='*/' \
+            --include='*.html' \
+            --include='*.css' \
+            --include='*.js' \
+            --include='*.mjs' \
+            --include='*.json' \
+            --include='*.xml' \
+            --include='*.txt' \
+            --include='*.ico' \
+            --include='*.png' \
+            --include='*.jpg' \
+            --include='*.jpeg' \
+            --include='*.gif' \
+            --include='*.svg' \
+            --include='*.webp' \
+            --include='*.avif' \
+            --include='*.woff' \
+            --include='*.woff2' \
+            --include='*.ttf' \
+            --include='*.otf' \
+            --exclude='*' \
+            ./ "${SITE_DIR}/"
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./_site
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
