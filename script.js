@@ -90,7 +90,7 @@ function applyLanguage(lang) {
 
   i18nElements.forEach((el) => {
     const key = el.dataset.i18n;
-    if (selected[key]) {
+    if (Object.prototype.hasOwnProperty.call(selected, key)) {
       el.textContent = selected[key];
     }
   });
