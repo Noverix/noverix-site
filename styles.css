@@ -15,7 +15,7 @@
   --accent: #00e5e5;          /* Electric Cyan from Logo tips */
   --accent-glow: rgba(0, 229, 229, 0.3);
   --accent-soft: #008fa3;     /* Deeper Teal from Logo base */
-  --accent-warm: #00ffc2;     /* Mint highlight */
+  --accent-warm: #00ba8c;     /* Deeper mint highlight */
 
   /* Lines & Borders */
   --line: rgba(0, 229, 229, 0.12);
@@ -135,6 +135,7 @@ img {
 .header-inner {
   display: grid;
   grid-template-columns: minmax(220px, 320px) 1fr auto;
+  grid-template-areas: "brand nav language";
   align-items: center;
   gap: 24px;
   padding: 16px 20px;
@@ -146,6 +147,7 @@ img {
 }
 
 .brand {
+  grid-area: brand;
   position: relative;
   z-index: 2;
   display: inline-flex;
@@ -156,20 +158,19 @@ img {
   color: inherit;
 }
 
-.brand-horizontal 
-{
+.brand-horizontal {
   display: inline-flex; /* Helps the link wrap tightly around the image */
   align-items: center;
   background: transparent;
   border: none;
   padding: 0;
   text-decoration: none;
-  /* Define a max-width here if you want to limit the logo size */
-  max-width: 140px;
+  width: min(100%, 164px);
+  max-width: 100%;
 }
 
 .brand-lockup {
-display: block;
+  display: block;
   width: 100%;       /* Fills the width of the <a> tag */
   height: auto;      /* Keeps the logo from stretching */
   object-fit: contain;
@@ -179,9 +180,11 @@ display: block;
 }
 
 .site-nav {
+  grid-area: nav;
   justify-self: center;
   display: inline-flex;
   align-items: center;
+  flex-wrap: wrap;
   gap: 8px;
   padding: 8px;
   border: 1px solid var(--line-soft);
@@ -195,6 +198,7 @@ display: block;
   color: #4d6282;
   font-weight: 650;
   text-decoration: none;
+  white-space: nowrap;
   transition: background-color 160ms ease, color 160ms ease, transform 160ms ease;
 }
 
@@ -207,6 +211,7 @@ display: block;
 }
 
 .language-switcher {
+  grid-area: language;
   justify-self: end;
   display: inline-flex;
   align-items: center;
@@ -272,14 +277,27 @@ h1 {
   max-width: 11ch;
   margin-bottom: 1.1rem;
   font-size: clamp(1.8rem, 4vw, 2.8rem);
-  line-height: 0.96;
 }
 
-h2 {
-  margin-bottom: 0.9rem;
-  font-size: clamp(1.4rem, 3vw, 2rem);
+.hero-title {
+  max-width: none;
+  margin-bottom: 1rem;
   line-height: 1.02;
+  text-wrap: normal;
 }
+
+.hero-title-line {
+  display: block;
+}
+
+.hero-title-line + .hero-title-line {
+  margin-top: 0.08em;
+}
+
+.hero-copy {
+  padding: 2rem 0 1.5rem;
+}
+
 
 h3 {
   margin-bottom: 0.55rem;
@@ -563,22 +581,24 @@ h3 {
 
 @media (max-width: 1040px) {
   .header-inner {
-    grid-template-columns: 1fr;
-    justify-items: start;
-    gap: 18px;
+    grid-template-columns: minmax(0, 1fr) auto;
+    grid-template-areas:
+      "brand language"
+      "nav nav";
+    gap: 16px;
   }
 
-  .brand-lockup {
-    width: min(100%, 120px);
+  .brand-horizontal {
+    width: min(100%, 156px);
   }
 
   .site-nav {
-    justify-self: start;
-    flex-wrap: wrap;
+    justify-self: stretch;
+    width: 100%;
   }
 
   .language-switcher {
-    justify-self: start;
+    justify-self: end;
   }
 
   .hero-layout,
@@ -595,20 +615,53 @@ h3 {
   }
 
   .header-inner {
-    /* Keep the dark theme but add a slight "frosted glass" effect */
-    background: rgba(255, 255, 255, 0.05); 
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "brand"
+      "nav"
+      "language";
+    justify-items: stretch;
+    gap: 12px;
+    padding: 14px;
+    background: rgba(248, 251, 255, 0.92);
     backdrop-filter: blur(20px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
+    border: 1px solid rgba(95, 129, 174, 0.16);
+    box-shadow: 0 12px 32px rgba(12, 26, 44, 0.16);
+    border-radius: 24px;
   }
 
-  .brand-lockup {
-    width: min(100%, 80px);
+  .brand {
+    justify-content: center;
+  }
+
+  .brand-horizontal {
+    width: min(100%, 148px);
   }
 
   .site-nav {
     width: 100%;
-    overflow-x: auto;
+    justify-content: center;
+    padding: 6px;
+    gap: 6px;
+    border-radius: 22px;
+  }
+
+  .site-nav a {
+    flex: 1 1 0;
+    min-width: 0;
+    padding: 11px 10px;
+    text-align: center;
+    font-size: 0.88rem;
+  }
+
+  .language-switcher {
+    justify-self: center;
+    padding: 6px;
+  }
+
+  .lang-btn {
+    min-width: 48px;
+    height: 42px;
   }
 
   .footer-inner {
@@ -621,5 +674,10 @@ h3 {
 
   .hero-copy {
     padding: 2rem 0 1.5rem;
+  }
+
+  .hero-title {
+    font-size: clamp(1.55rem, 7vw, 2rem);
+    line-height: 1.04;
   }
 }

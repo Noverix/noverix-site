@@ -88,7 +88,7 @@ const translations = {
   pt: {
     brandTag: 'Preparada para o futuro',
     navAbout: 'Sobre',
-    navFocus: 'Áreas de foco',
+    navFocus: 'Foco',
     navContact: 'Contato',
     heroEyebrow: 'Grupo para crescimento digital',
     heroTitle: 'IA simples. Serviços digitais sólidos. Negócios preparados para o futuro.',
@@ -174,7 +174,7 @@ const translations = {
   fr: {
     brandTag: 'Pensée pour l’avenir',
     navAbout: 'À propos',
-    navFocus: 'Domaines d’activité',
+    navFocus: 'Domaines',
     navContact: 'Contact',
     heroEyebrow: 'Groupe de croissance numérique',
     heroTitle: 'IA simple. Services numériques solides. Entreprises prêtes pour l’avenir.',
@@ -263,6 +263,18 @@ const i18nElements = document.querySelectorAll('[data-i18n]');
 const supportedLanguages = ['en', 'pt', 'fr'];
 const storageKey = 'noverix-language';
 
+function renderSentenceLines(element, text) {
+  const sentences = text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((part) => part.trim()) || [text];
+  element.innerHTML = '';
+
+  sentences.forEach((sentence) => {
+    const line = document.createElement('span');
+    line.className = 'hero-title-line';
+    line.textContent = sentence;
+    element.appendChild(line);
+  });
+}
+
 function getInitialLanguage() {
   try {
     const savedLanguage = window.localStorage.getItem(storageKey);
@@ -285,7 +297,11 @@ function applyLanguage(lang) {
   i18nElements.forEach((element) => {
     const key = element.dataset.i18n;
     if (Object.prototype.hasOwnProperty.call(selected, key)) {
-      element.textContent = selected[key];
+      if (key === 'heroTitle') {
+        renderSentenceLines(element, selected[key]);
+      } else {
+        element.textContent = selected[key];
+      }
     }
   });
 
