@@ -1,171 +1,260 @@
 const translations = {
   en: {
-    brandTag: 'Future-ready ventures',
+    brandTag: 'Built for the future',
     navAbout: 'About',
-    navFocus: 'Focus areas',
+    navFocus: 'Focus Areas',
     navContact: 'Contact',
-    heroEyebrow: 'Holding company for digital growth',
-    heroTitle: 'Simple AI. Strong digital services. Future ventures.',
+    heroEyebrow: 'Digital growth group',
+    heroTitle: 'Simple AI. Solid digital services. Future-ready businesses.',
     heroText:
       'Noverix builds and supports modern digital initiatives with practical execution, clear strategy, and long-term value.',
     heroPrimary: 'Explore focus areas',
-    heroSecondary: 'Get in touch',
+    heroSecondary: 'Contact us',
     heroSignal1Value: 'Lean',
-    heroSignal1Label: 'Execution model',
+    heroSignal1Label: 'Direct execution',
     heroSignal2Value: 'AI-first',
-    heroSignal2Label: 'Delivery layer',
+    heroSignal2Label: 'Delivery focused',
     heroSignal3Value: 'Long-term',
-    heroSignal3Label: 'Venture thinking',
+    heroSignal3Label: 'Growth vision',
     heroPanelLabel: 'Operating model',
-    heroPanelTitle: 'Built to launch, support, and scale practical digital ventures.',
+    heroPanelTitle:
+      'Structured to launch, support, and scale practical digital businesses.',
     heroPoint1Title: 'Simple AI',
-    heroPoint1Text: 'Useful systems that solve real workflow and service problems.',
+    heroPoint1Text:
+      'Useful systems that solve real workflow and service problems.',
     heroPoint2Title: 'Digital services',
-    heroPoint2Text: 'Reliable execution across product, operations, and delivery.',
-    heroPoint3Title: 'Future ventures',
-    heroPoint3Text: 'Selective bets on durable digital opportunities.',
+    heroPoint2Text:
+      'Reliable execution across product, operations, and delivery.',
+    heroPoint3Title: 'Future-ready businesses',
+    heroPoint3Text:
+      'Selective bets on durable digital opportunities built for long-term value.',
     aboutKicker: 'What Noverix does',
-    aboutTitle: 'A focused company with a practical lens.',
+    aboutTitle: 'A focused company with a practical vision.',
     aboutText:
-      'We invest in and operate practical digital businesses with a bias toward clarity, speed, and resilient execution.',
+      'We build and operate practical digital businesses with a focus on clarity, speed, resilience, and long-term value.',
+    missionTitle: 'Our mission',
+    missionText:
+      'Noverix exists to democratize high-quality security, infrastructure, and digital execution for smaller businesses and emerging teams. We believe security should not be a luxury. It should be a standard.',
+    missionPoint1:
+      'Make advanced digital capabilities more accessible to smaller players',
+    missionPoint2:
+      'Use AI-driven automation to reduce complexity and manual effort',
+    missionPoint3:
+      'Help teams move faster with secure and practical foundations',
     supportTitle: 'Who we support',
     supportText:
-      'We work best with builders and teams who want progress without unnecessary complexity.',
+      'We work best with founders and teams who want to move forward without unnecessary complexity.',
     supportPoint1: 'Founders shaping new offers',
     supportPoint2: 'Teams that need reliable execution',
-    supportPoint3: 'Businesses looking for practical AI adoption',
+    supportPoint3: 'Businesses seeking practical AI adoption',
     focusKicker: 'Focus areas',
-    focusTitle: 'Where we create momentum',
+    focusTitle: 'Where we create results',
     focusIntro:
-      'We stay concentrated on a few high-value areas so strategy and execution stay aligned.',
+      'We stay focused on a small number of high-value areas to align strategy and execution.',
     focus1Title: 'Simple AI solutions',
-    focus1Text: 'Useful AI integrations that solve real business problems.',
+    focus1Text:
+      'Useful AI integrations that solve real business problems.',
     focus2Title: 'Digital services',
-    focus2Text: 'Reliable products, operations, and service delivery for digital teams.',
-    focus3Title: 'Future digital ventures',
-    focus3Text: 'New opportunities built for the next generation of online value.',
+    focus2Text:
+      'Products, operations, and service delivery built for modern teams.',
+    focus3Title: 'Security and infrastructure',
+    focus3Text:
+      'Practical guardrails, automation, and technical foundations that help smaller teams build with confidence.',
+    modelKicker: 'How we think',
+    modelTitle: 'Security as a standard, not a luxury.',
+    modelText:
+      'Our approach combines practical DevSecOps, automation, and structured delivery so smaller businesses can access modern capabilities without enterprise-scale complexity.',
+    modelPoint1Title: 'Guardrails, not roadblocks',
+    modelPoint1Text:
+      'We build secure boundaries around delivery so teams can move faster without losing control.',
+    modelPoint2Title: 'Automation at the core',
+    modelPoint2Text:
+      'GenAI and automation help reduce repetitive work across compliance, infrastructure, and secure delivery.',
+    modelPoint3Title: 'Built for the underdog',
+    modelPoint3Text:
+      'We bring a high-standard, practical approach to teams that are often underserved by traditional enterprise solutions.',
     statusLabel: 'Current status',
-    statusTitle: 'Building selectively, partnering intentionally.',
+    statusTitle: 'Building selectively, partnering with intention.',
     statusText:
-      'Noverix is actively developing projects and partnerships and remains open to strategic collaboration where there is a strong fit.',
+      'Noverix is actively developing projects and partnerships and remains open to strategic collaborations with strong alignment.',
     contactLabel: 'Contact',
-    contactTitle: "Let's talk about the next move.",
+    contactTitle: 'Let’s talk about the next step.',
     contactText:
-      'Reach out if you are building something promising and need a pragmatic digital partner.',
+      'Reach out if you are building something promising and need a practical digital partner.',
     contactButton: 'info@noverix.com.br',
-    footerText: 'Future-ready digital ventures.'
+    footerText: 'Digital businesses built for the future.'
   },
+
   pt: {
-    brandTag: 'Ventures para o futuro',
+    brandTag: 'Preparada para o futuro',
     navAbout: 'Sobre',
-    navFocus: 'Areas de foco',
+    navFocus: 'Áreas de foco',
     navContact: 'Contato',
-    heroEyebrow: 'Holding para crescimento digital',
-    heroTitle: 'IA simples. Servicos digitais solidos. Ventures futuras.',
+    heroEyebrow: 'Grupo para crescimento digital',
+    heroTitle: 'IA simples. Serviços digitais sólidos. Negócios preparados para o futuro.',
     heroText:
-      'A Noverix cria e apoia iniciativas digitais modernas com execucao pratica, estrategia clara e valor de longo prazo.',
-    heroPrimary: 'Explorar areas de foco',
+      'A Noverix cria e apoia iniciativas digitais modernas com execução prática, estratégia clara e valor de longo prazo.',
+    heroPrimary: 'Explorar áreas de foco',
     heroSecondary: 'Fale conosco',
     heroSignal1Value: 'Enxuta',
-    heroSignal1Label: 'Execucao direta',
-    heroSignal2Value: 'IA-primeiro',
-    heroSignal2Label: 'Camada de entrega',
+    heroSignal1Label: 'Execução direta',
+    heroSignal2Value: 'IA em primeiro lugar',
+    heroSignal2Label: 'Foco em entrega',
     heroSignal3Value: 'Longo prazo',
-    heroSignal3Label: 'Visao de venture',
+    heroSignal3Label: 'Visão de crescimento',
     heroPanelLabel: 'Modelo operacional',
-    heroPanelTitle: 'Estruturada para lancar, apoiar e escalar ventures digitais praticas.',
+    heroPanelTitle:
+      'Estruturada para lançar, apoiar e escalar negócios digitais práticos.',
     heroPoint1Title: 'IA simples',
-    heroPoint1Text: 'Sistemas uteis que resolvem problemas reais de fluxo e servico.',
-    heroPoint2Title: 'Servicos digitais',
-    heroPoint2Text: 'Execucao confiavel em produto, operacao e entrega.',
-    heroPoint3Title: 'Ventures futuras',
-    heroPoint3Text: 'Apostas seletivas em oportunidades digitais duradouras.',
+    heroPoint1Text:
+      'Sistemas úteis que resolvem problemas reais de fluxo e serviço.',
+    heroPoint2Title: 'Serviços digitais',
+    heroPoint2Text:
+      'Execução confiável em produto, operação e entrega.',
+    heroPoint3Title: 'Negócios preparados para o futuro',
+    heroPoint3Text:
+      'Apostas seletivas em oportunidades digitais duradouras, construídas para gerar valor no longo prazo.',
     aboutKicker: 'O que a Noverix faz',
-    aboutTitle: 'Uma empresa focada com visao pratica.',
+    aboutTitle: 'Uma empresa focada, com visão prática.',
     aboutText:
-      'Investimos e operamos negocios digitais praticos com foco em clareza, velocidade e execucao resiliente.',
+      'Criamos e operamos negócios digitais práticos com foco em clareza, velocidade, resiliência e valor de longo prazo.',
+    missionTitle: 'Nossa missão',
+    missionText:
+      'A Noverix existe para democratizar segurança de alta qualidade, infraestrutura e execução digital para pequenas empresas e equipes em crescimento. Acreditamos que segurança não deve ser um luxo. Deve ser um padrão.',
+    missionPoint1:
+      'Tornar recursos digitais avançados mais acessíveis para equipes menores',
+    missionPoint2:
+      'Usar automação orientada por IA para reduzir complexidade e esforço manual',
+    missionPoint3:
+      'Ajudar equipes a avançar com mais velocidade sobre bases seguras e práticas',
     supportTitle: 'Quem apoiamos',
     supportText:
-      'Trabalhamos melhor com construtores e equipes que querem avancar sem complexidade desnecessaria.',
-    supportPoint1: 'Fundadores moldando novas ofertas',
-    supportPoint2: 'Equipes que precisam de execucao confiavel',
-    supportPoint3: 'Empresas buscando adocao pratica de IA',
-    focusKicker: 'Areas de foco',
-    focusTitle: 'Onde criamos tracao',
+      'Trabalhamos melhor com fundadores e equipes que querem avançar sem complexidade desnecessária.',
+    supportPoint1: 'Fundadores criando novas ofertas',
+    supportPoint2: 'Equipes que precisam de execução confiável',
+    supportPoint3: 'Empresas em busca de adoção prática de IA',
+    focusKicker: 'Áreas de foco',
+    focusTitle: 'Onde geramos resultados',
     focusIntro:
-      'Mantemos foco em poucas areas de alto valor para alinhar estrategia e execucao.',
-    focus1Title: 'Solucoes de IA simples',
-    focus1Text: 'Integracoes uteis de IA que resolvem problemas reais de negocio.',
-    focus2Title: 'Servicos digitais',
-    focus2Text: 'Produtos, operacoes e entrega de servicos confiaveis para equipes digitais.',
-    focus3Title: 'Ventures digitais futuras',
-    focus3Text: 'Novas oportunidades construidas para a proxima geracao de valor online.',
+      'Mantemos foco em poucas áreas de alto valor para alinhar estratégia e execução.',
+    focus1Title: 'Soluções simples de IA',
+    focus1Text:
+      'Integrações úteis de IA que resolvem problemas reais de negócio.',
+    focus2Title: 'Serviços digitais',
+    focus2Text:
+      'Produtos, operações e entrega de serviços pensados para equipes modernas.',
+    focus3Title: 'Segurança e infraestrutura',
+    focus3Text:
+      'Guardrails práticos, automação e bases técnicas que ajudam equipes menores a construir com confiança.',
+    modelKicker: 'Como pensamos',
+    modelTitle: 'Segurança como padrão, não como luxo.',
+    modelText:
+      'Nossa abordagem combina DevSecOps prático, automação e entrega estruturada para que empresas menores tenham acesso a capacidades modernas sem a complexidade de grandes ambientes corporativos.',
+    modelPoint1Title: 'Guardrails, não bloqueios',
+    modelPoint1Text:
+      'Criamos limites seguros ao redor da entrega para que as equipes avancem mais rápido sem perder o controle.',
+    modelPoint2Title: 'Automação no centro',
+    modelPoint2Text:
+      'IA generativa e automação ajudam a reduzir o trabalho repetitivo em compliance, infraestrutura e entrega segura.',
+    modelPoint3Title: 'Feito para quem precisa competir',
+    modelPoint3Text:
+      'Levamos um padrão elevado e uma abordagem prática para equipes que normalmente são pouco atendidas por soluções corporativas tradicionais.',
     statusLabel: 'Status atual',
-    statusTitle: 'Construindo com seletividade, fazendo parcerias com intencao.',
+    statusTitle: 'Construindo com seletividade, fazendo parcerias com intenção.',
     statusText:
-      'A Noverix esta desenvolvendo projetos e parcerias ativamente e segue aberta a colaboracoes estrategicas com forte aderencia.',
+      'A Noverix está desenvolvendo projetos e parcerias ativamente e segue aberta a colaborações estratégicas com forte alinhamento.',
     contactLabel: 'Contato',
-    contactTitle: 'Vamos conversar sobre o proximo passo.',
+    contactTitle: 'Vamos conversar sobre o próximo passo.',
     contactText:
-      'Entre em contato se voce esta construindo algo promissor e precisa de um parceiro digital pragmatico.',
+      'Entre em contato se você está construindo algo promissor e precisa de um parceiro digital prático.',
     contactButton: 'info@noverix.com.br',
-    footerText: 'Ventures digitais preparadas para o futuro.'
+    footerText: 'Negócios digitais preparados para o futuro.'
   },
+
   fr: {
-    brandTag: 'Ventures tournées vers l’avenir',
+    brandTag: 'Pensée pour l’avenir',
     navAbout: 'À propos',
-    navFocus: 'Axes',
+    navFocus: 'Domaines d’activité',
     navContact: 'Contact',
-    heroEyebrow: 'Holding dédiée à la croissance digitale',
-    heroTitle: 'IA simple. Services digitaux solides. Ventures d’avenir.',
+    heroEyebrow: 'Groupe de croissance numérique',
+    heroTitle: 'IA simple. Services numériques solides. Entreprises prêtes pour l’avenir.',
     heroText:
-      'Noverix construit et soutient des initiatives digitales modernes avec une exécution pragmatique, une stratégie claire et une valeur durable.',
-    heroPrimary: 'Découvrir nos axes',
+      'Noverix crée et soutient des initiatives numériques modernes grâce à une exécution concrète, une stratégie claire et une valeur durable.',
+    heroPrimary: 'Explorer nos domaines d’activité',
     heroSecondary: 'Nous contacter',
-    heroSignal1Value: 'Lean',
-    heroSignal1Label: 'Modèle d’exécution',
-    heroSignal2Value: 'IA-first',
-    heroSignal2Label: 'Couche de delivery',
+    heroSignal1Value: 'Agile',
+    heroSignal1Label: 'Exécution directe',
+    heroSignal2Value: 'IA d’abord',
+    heroSignal2Label: 'Axée sur la livraison',
     heroSignal3Value: 'Long terme',
-    heroSignal3Label: 'Vision venture',
-    heroPanelLabel: 'Mode opératoire',
-    heroPanelTitle: 'Conçue pour lancer, soutenir et faire évoluer des ventures digitales concrètes.',
+    heroSignal3Label: 'Vision de croissance',
+    heroPanelLabel: 'Modèle opérationnel',
+    heroPanelTitle:
+      'Structurée pour lancer, soutenir et faire évoluer des entreprises numériques concrètes.',
     heroPoint1Title: 'IA simple',
-    heroPoint1Text: 'Des systèmes utiles qui résolvent de vrais problèmes de flux et de service.',
-    heroPoint2Title: 'Services digitaux',
-    heroPoint2Text: 'Une exécution fiable sur le produit, les opérations et la delivery.',
-    heroPoint3Title: 'Ventures futures',
-    heroPoint3Text: 'Des paris sélectifs sur des opportunités digitales durables.',
+    heroPoint1Text:
+      'Des systèmes utiles qui répondent à de vrais besoins en flux de travail et en service.',
+    heroPoint2Title: 'Services numériques',
+    heroPoint2Text:
+      'Une exécution fiable en produit, opérations et livraison.',
+    heroPoint3Title: 'Entreprises prêtes pour l’avenir',
+    heroPoint3Text:
+      'Des choix ciblés dans des opportunités numériques durables, conçues pour créer de la valeur à long terme.',
     aboutKicker: 'Ce que fait Noverix',
-    aboutTitle: 'Une structure ciblée avec une approche pragmatique.',
+    aboutTitle: 'Une entreprise ciblée avec une vision concrète.',
     aboutText:
-      'Nous investissons dans des activités digitales concrètes et les opérons avec un parti pris pour la clarté, la vitesse et une exécution résiliente.',
+      'Nous créons et exploitons des entreprises numériques concrètes avec un souci de clarté, de rapidité, de résilience et de valeur à long terme.',
+    missionTitle: 'Notre mission',
+    missionText:
+      'Noverix existe pour démocratiser une sécurité de haut niveau, une infrastructure moderne et une exécution numérique de qualité pour les petites entreprises et les équipes en croissance. Pour nous, la sécurité ne doit pas être un luxe. Elle doit être une norme.',
+    missionPoint1:
+      'Rendre les capacités numériques avancées plus accessibles aux plus petites équipes',
+    missionPoint2:
+      'Utiliser l’automatisation pilotée par l’IA pour réduire la complexité et l’effort manuel',
+    missionPoint3:
+      'Aider les équipes à avancer plus vite sur des bases sûres et concrètes',
     supportTitle: 'Qui nous accompagnons',
     supportText:
-      'Nous sommes les plus utiles aux bâtisseurs et aux équipes qui veulent avancer sans complexité inutile.',
-    supportPoint1: 'Fondateurs qui façonnent de nouvelles offres',
+      'Nous travaillons au mieux avec des fondateurs et des équipes qui veulent avancer sans complexité inutile.',
+    supportPoint1: 'Fondateurs qui conçoivent de nouvelles offres',
     supportPoint2: 'Équipes qui ont besoin d’une exécution fiable',
-    supportPoint3: 'Entreprises en quête d’une adoption pragmatique de l’IA',
-    focusKicker: 'Axes de focus',
-    focusTitle: 'Là où nous créons de l’élan',
+    supportPoint3: 'Entreprises qui recherchent une adoption concrète de l’IA',
+    focusKicker: 'Domaines d’activité',
+    focusTitle: 'Là où nous créons des résultats',
     focusIntro:
-      'Nous restons concentrés sur quelques axes à forte valeur pour garder stratégie et exécution alignées.',
-    focus1Title: 'Solutions IA simples',
-    focus1Text: 'Des intégrations IA utiles qui résolvent de vrais problèmes business.',
-    focus2Title: 'Services digitaux',
-    focus2Text: 'Des produits, opérations et services fiables pour les équipes digitales.',
-    focus3Title: 'Ventures digitales futures',
-    focus3Text: 'De nouvelles opportunités construites pour la prochaine génération de valeur en ligne.',
+      'Nous restons concentrés sur un petit nombre de domaines à forte valeur pour aligner stratégie et exécution.',
+    focus1Title: 'Solutions d’IA simples',
+    focus1Text:
+      'Des intégrations IA utiles qui résolvent de vrais problèmes d’affaires.',
+    focus2Title: 'Services numériques',
+    focus2Text:
+      'Produits, opérations et livraison de services conçus pour les équipes modernes.',
+    focus3Title: 'Sécurité et infrastructure',
+    focus3Text:
+      'Des garde-fous concrets, de l’automatisation et des fondations techniques qui aident les petites équipes à bâtir avec confiance.',
+    modelKicker: 'Notre approche',
+    modelTitle: 'La sécurité comme norme, pas comme luxe.',
+    modelText:
+      'Notre approche combine un DevSecOps concret, l’automatisation et une exécution structurée afin de permettre aux plus petites entreprises d’accéder à des capacités modernes sans la complexité des environnements de grande entreprise.',
+    modelPoint1Title: 'Des garde-fous, pas des blocages',
+    modelPoint1Text:
+      'Nous mettons en place des limites sécurisées autour de la livraison pour aider les équipes à avancer plus vite sans perdre le contrôle.',
+    modelPoint2Title: 'L’automatisation au cœur',
+    modelPoint2Text:
+      'L’IA générative et l’automatisation réduisent le travail répétitif lié à la conformité, à l’infrastructure et à la livraison sécurisée.',
+    modelPoint3Title: 'Conçu pour ceux qui doivent rivaliser',
+    modelPoint3Text:
+      'Nous apportons un haut niveau d’exigence et une approche concrète à des équipes souvent mal servies par les solutions d’entreprise traditionnelles.',
     statusLabel: 'Statut actuel',
-    statusTitle: 'Construire avec discernement, nouer des partenariats avec intention.',
+    statusTitle: 'Construire avec discernement, collaborer avec intention.',
     statusText:
-      'Noverix développe activement des projets et des partenariats et reste ouverte aux collaborations stratégiques quand l’adéquation est forte.',
+      'Noverix développe activement des projets et des partenariats et reste ouverte aux collaborations stratégiques fondées sur un fort alignement.',
     contactLabel: 'Contact',
     contactTitle: 'Parlons de la prochaine étape.',
     contactText:
-      'Écrivez-nous si vous construisez quelque chose de prometteur et cherchez un partenaire digital pragmatique.',
+      'Contactez-nous si vous construisez quelque chose de prometteur et avez besoin d’un partenaire numérique concret.',
     contactButton: 'info@noverix.com.br',
-    footerText: 'Ventures digitales tournées vers l’avenir.'
+    footerText: 'Des entreprises numériques construites pour l’avenir.'
   }
 };
 
