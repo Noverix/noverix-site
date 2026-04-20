@@ -52,7 +52,7 @@ const translations = {
     contactTitle: "Let's talk about the next move.",
     contactText:
       'Reach out if you are building something promising and need a pragmatic digital partner.',
-    contactButton: 'contact@noverix.com',
+    contactButton: 'info@noverix.com.br',
     footerText: 'Future-ready digital ventures.'
   },
   pt: {
@@ -108,7 +108,7 @@ const translations = {
     contactTitle: 'Vamos conversar sobre o proximo passo.',
     contactText:
       'Entre em contato se voce esta construindo algo promissor e precisa de um parceiro digital pragmatico.',
-    contactButton: 'contact@noverix.com',
+    contactButton: 'info@noverix.com.br',
     footerText: 'Ventures digitais preparadas para o futuro.'
   },
   fr: {
@@ -164,7 +164,7 @@ const translations = {
     contactTitle: 'Parlons de la prochaine étape.',
     contactText:
       'Écrivez-nous si vous construisez quelque chose de prometteur et cherchez un partenaire digital pragmatique.',
-    contactButton: 'contact@noverix.com',
+    contactButton: 'info@noverix.com.br',
     footerText: 'Ventures digitales tournées vers l’avenir.'
   }
 };
