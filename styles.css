@@ -681,3 +681,408 @@ h3 {
     line-height: 1.04;
   }
 }
+
+/* =============================================
+   NOVERIX — NEW SECTIONS (products, founders, services 2-col)
+   ============================================= */
+
+/* 2-column card grid for services */
+.card-grid-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+@media (max-width: 1040px) {
+  .card-grid-2 { grid-template-columns: 1fr; }
+}
+
+/* Product card */
+.product-card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  overflow: hidden;
+  margin-top: 0;
+}
+
+.product-info {
+  padding: 2.5rem 2.5rem 2.5rem 2rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 0.8rem;
+}
+
+.product-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 700;
+  letter-spacing: -0.03em;
+  margin: 0;
+  color: var(--text-strong);
+}
+
+.product-domain { color: var(--accent-soft); }
+
+.product-features {
+  list-style: none;
+  padding: 0;
+  margin: 0.4rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.product-features li {
+  position: relative;
+  padding-left: 1.4rem;
+  font-size: 0.9rem;
+  color: var(--text-muted-strong);
+}
+
+.product-features li::before {
+  content: "✓";
+  position: absolute;
+  left: 0;
+  color: var(--accent-warm);
+  font-weight: 700;
+}
+
+.product-visual {
+  background: linear-gradient(135deg, #0d1e1a 0%, #0a1520 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 3rem 2rem;
+  min-height: 320px;
+}
+
+.product-mockup {
+  background: #0d1318;
+  border: 1px solid rgba(0,229,229,0.15);
+  border-radius: 12px;
+  padding: 1.4rem;
+  width: 100%;
+  max-width: 280px;
+  box-shadow: 0 30px 60px rgba(0,0,0,0.5);
+}
+
+.mockup-bar {
+  display: flex;
+  gap: 6px;
+  margin-bottom: 1rem;
+}
+
+.mockup-dot {
+  width: 10px; height: 10px;
+  border-radius: 50%;
+  display: inline-block;
+}
+
+.dot-red { background: #ff5f57; }
+.dot-yellow { background: #febc2e; }
+.dot-green { background: #28c840; }
+
+.mockup-url {
+  background: rgba(0,229,229,0.08);
+  border-radius: 4px;
+  padding: 0.35rem 0.7rem;
+  font-size: 0.7rem;
+  color: var(--accent);
+  margin-bottom: 1rem;
+  font-family: monospace;
+  border: 1px solid rgba(0,229,229,0.15);
+}
+
+.mockup-line {
+  height: 7px;
+  background: rgba(255,255,255,0.07);
+  border-radius: 4px;
+  margin-bottom: 0.5rem;
+}
+
+.mockup-line.short { width: 55%; }
+.mockup-line.accent-line { background: rgba(0,229,229,0.3); width: 85%; }
+
+.mockup-btn-fake {
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent));
+  color: #0b0f15;
+  font-size: 0.68rem;
+  font-weight: 700;
+  padding: 0.4rem 0.9rem;
+  border-radius: 999px;
+  width: fit-content;
+  margin-top: 0.9rem;
+  letter-spacing: 0.04em;
+}
+
+@media (max-width: 1040px) {
+  .product-card { grid-template-columns: 1fr; }
+  .product-visual { min-height: 200px; }
+}
+
+/* Founders grid */
+.founders-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 0;
+}
+
+.founder-card {
+  padding: 2rem 1.8rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  transition: border-color 0.25s, transform 0.25s;
+}
+
+.founder-avatar {
+  width: 56px; height: 56px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, var(--accent-soft), var(--accent-warm));
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1.1rem;
+  color: #fff;
+  flex-shrink: 0;
+}
+
+.founder-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin: 0.2rem 0 0;
+  color: var(--text-strong);
+  letter-spacing: -0.02em;
+}
+
+.founder-role {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--accent-warm);
+  margin: 0;
+}
+
+.founder-bio {
+  font-size: 0.88rem;
+  line-height: 1.65;
+  margin: 0.2rem 0;
+}
+
+.founder-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  margin-top: 0.2rem;
+}
+
+.founder-tag {
+  background: rgba(0,229,229,0.08);
+  border: 1px solid rgba(0,229,229,0.2);
+  color: var(--accent);
+  font-size: 0.68rem;
+  font-weight: 600;
+  padding: 0.2rem 0.6rem;
+  border-radius: 999px;
+  letter-spacing: 0.04em;
+}
+
+.founder-linkedin {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.6rem;
+  font-size: 0.78rem;
+  font-weight: 600;
+  color: var(--text-muted-strong);
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.founder-linkedin:hover { color: var(--accent); }
+
+@media (max-width: 1040px) {
+  .founders-grid { grid-template-columns: 1fr; }
+}
+
+/* =============================================
+   FOOTER — REDES SOCIAIS
+   ============================================= */
+.site-footer {
+  padding: 0 0 0;
+}
+
+.footer-social {
+  padding: 2rem 0 0;
+}
+
+.footer-social-inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(0,229,229,0.08);
+}
+
+.footer-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+}
+
+.footer-brand-name {
+  font-family: "Space Grotesk", sans-serif;
+  font-weight: 700;
+  font-size: 1rem;
+  letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+.footer-brand-tag {
+  font-size: 0.75rem;
+  color: var(--text-muted);
+  margin-top: 2px;
+}
+
+.social-row {
+  display: flex;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.social-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.social-btn {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(0,229,229,0.2);
+  background: rgba(0,229,229,0.05);
+  cursor: pointer;
+  transition: all 0.2s ease;
+  text-decoration: none;
+}
+
+.social-btn:hover {
+  background: rgba(0,229,229,0.12);
+  border-color: var(--accent);
+  transform: translateY(-3px);
+}
+
+.social-btn svg {
+  width: 18px;
+  height: 18px;
+  fill: var(--text-muted);
+  transition: fill 0.2s;
+}
+
+.social-btn:hover svg {
+  fill: #fff;
+}
+
+.social-btn.coming {
+  opacity: 0.35;
+  cursor: default;
+  pointer-events: none;
+}
+
+.social-label {
+  font-size: 9px;
+  color: var(--text-muted);
+  text-align: center;
+  letter-spacing: 0.04em;
+}
+
+.footer-bottom-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 1rem 0 2rem;
+  font-size: 0.82rem;
+}
+
+@media (max-width: 640px) {
+  .footer-social-inner {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  .footer-bottom-inner {
+    flex-direction: column;
+  }
+}
+
+/* =============================================
+   AVELIX APP CAROUSEL — screenshots reais
+   ============================================= */
+.app-carousel {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 20px 16px;
+}
+
+.app-carousel-track {
+  position: relative;
+  width: 190px;
+  height: 340px;
+}
+
+.app-slide {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%; height: 100%;
+  opacity: 0;
+  transition: opacity 0.7s ease;
+}
+
+.app-slide.active { opacity: 1; }
+
+.app-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 18px;
+  box-shadow: 0 12px 32px rgba(0,0,0,0.18);
+}
+
+.app-carousel-dots {
+  display: flex;
+  gap: 8px;
+}
+
+.app-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: rgba(26,58,107,0.2);
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+  padding: 0;
+}
+
+.app-dot.active { background: var(--accent-warm); }
+
+/* Override old product-visual background for carousel */
+.product-card .product-visual {
+  background: linear-gradient(135deg, #e8f4ff, #ddeeff);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0;
+}
