@@ -11,7 +11,7 @@ const translations = {
     heroPrimary: 'Start now',
     heroSecondary: 'See our products →',
     heroSignal1Value: '3',
-    heroSignal1Label: 'Expert team',
+    heroSignal1Label: 'Expert founders',
     heroSignal2Value: '15+',
     heroSignal2Label: 'Years combined',
     heroSignal3Value: '100%',
@@ -101,7 +101,7 @@ const translations = {
     heroPrimary: 'Começar agora',
     heroSecondary: 'Ver nossos produtos →',
     heroSignal1Value: '3',
-    heroSignal1Label: 'Equipe especialista',
+    heroSignal1Label: 'Fundadores especialistas',
     heroSignal2Value: '15+',
     heroSignal2Label: 'Anos de experiência',
     heroSignal3Value: '100%',
@@ -191,7 +191,7 @@ const translations = {
     heroPrimary: 'Commencer maintenant',
     heroSecondary: 'Voir nos produits →',
     heroSignal1Value: '3',
-    heroSignal1Label: 'Équipe experte',
+    heroSignal1Label: 'Fondateurs experts',
     heroSignal2Value: '15+',
     heroSignal2Label: 'Années combinées',
     heroSignal3Value: '100%',
@@ -332,12 +332,13 @@ applyLanguage(getInitialLanguage());
   if (!slides.length) return;
 
   window.appGoTo = function (n) {
+    const safeN = ((n % slides.length) + slides.length) % slides.length;
     slides[cur].classList.remove('active');
     dots[cur].classList.remove('active');
-    cur = n;
+    cur = safeN;
     slides[cur].classList.add('active');
     dots[cur].classList.add('active');
   };
 
-  setInterval(() => window.appGoTo((cur + 1) % slides.length), 2800);
+  setInterval(() => window.appGoTo(cur + 1), 2800);
 })();
