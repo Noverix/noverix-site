@@ -35,7 +35,7 @@ A modern landing page for Avelix, built with Next.js, TypeScript, Tailwind CSS, 
 - `npm run start` - run the production server locally
 - `npm run lint` - run ESLint
 - `npm run preview` - build and preview with OpenNext
-- `npm run deploy` - build and deploy with OpenNext
+- `npm run deploy` - build and deploy to Cloudflare Workers with OpenNext
 - `npm run upload` - build and upload with OpenNext
 
 ## Project Structure
@@ -47,7 +47,7 @@ A modern landing page for Avelix, built with Next.js, TypeScript, Tailwind CSS, 
 ## Customization
 - Update the route content in `src/app` as needed.
 - Update shared UI in `src/components`.
-- Review Cloudflare settings before deploying.
+- Review Cloudflare settings and GitHub Actions secrets before deploying.
 
 ## Linting
 ```bash
