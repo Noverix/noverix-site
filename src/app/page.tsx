@@ -1,8 +1,7 @@
 "use client";
 
 import { useEffect, useState } from "react";
-import { AvelixAppPreview } from "@/components/avelix-app-preview";
-import Image from "next/image";
+import { ContactForm } from "@/components/contact-form";
 
 type Locale = "pt" | "en" | "fr";
 
@@ -16,16 +15,15 @@ const storageKey = "noverix-language";
 
 const translations = {
   pt: {
-    header: { logoLabel: "Noverix inicio" },
-    nav: { about: "Sobre", services: "Serviços", products: "Produtos", team: "Equipe", contact: "Contato" },
+    header: { logoLabel: "Noverix início" },
+    nav: { about: "Sobre", services: "Serviços", team: "Equipe", contact: "Contato" },
     hero: {
       eyebrow: "Tecnologia para pequenas empresas",
       title: "Seu negócio merece uma aplicação web sob medida.",
       text: "Desenvolvemos aplicações web personalizadas para micro e pequenas empresas — com suporte contínuo, sem complicação, com resultado real.",
       primaryCta: "Começar agora",
-      secondaryCta: "Ver nossos produtos →",
       signals: [
-        { value: "3", label: "Fundadores especialistas" },
+        { value: "15+", label: "Anos de experiência da equipe" },
         { value: "15+", label: "Anos de experiência" },
         { value: "100%", label: "Foco em PMEs" },
       ],
@@ -76,32 +74,11 @@ const translations = {
         { title: "Entrega + Suporte mensal", text: "Sua aplicação vai ao ar. Um plano de suporte mensal garante evolução contínua, correções e segurança." },
       ],
     },
-    products: {
-      kicker: "Nossos produtos",
-      title: "Soluções que já estão no ar",
-      intro: "Além de projetos personalizados, a Noverix desenvolve seus próprios produtos — ferramentas reais para necessidades reais.",
-      avelix: {
-        kicker: "Produto oficial",
-        text: "Nossa primeira aplicação web oficial — uma plataforma que demonstra o potencial das soluções Noverix para pequenas empresas. Um produto real, funcional, entregue.",
-        features: [
-          "Aplicação web completa e responsiva",
-          "Interface moderna e intuitiva",
-          "Infraestrutura cloud segura",
-          "Suporte e evolução contínua",
-          "Modelo de negócio com receita recorrente via suporte mensal",
-        ],
-        cta: "Visitar Avelix →",
-      },
-    },
-    founders: {
+    staff: {
       kicker: "A equipe",
-      title: "Os fundadores por trás da Noverix",
-      intro: "Uma equipe trilíngue de especialistas em tecnologia, com décadas de experiência combinada em grandes organizações no Canadá e no Brasil.",
-      people: [
-        { role: "Co-fundador · Segurança de Identidade", bio: "Especialista em IAM com experiência em ambientes Azure de grande escala no setor público e de saúde do Canadá. Protegeu mais de 330.000 funcionários da rede de saúde do Québec via SSO e Microsoft Entra ID. Certificado ITIL V4 e Microsoft Applied Skills." },
-        { role: "Co-fundador · Segurança Cloud", bio: "Senior Cloud Security Advisor com mais de 10 anos em ambientes Azure críticos para SAAQ, iA Financial Group e Ville de Laval. Gerenciou mais de 400 assinaturas Azure. Certificações: AZ-500, AZ-305, CompTIA Security+, ISO 27002." },
-        { role: "Co-fundadora · Engenharia & AppSec", bio: "Engenheira de segurança cloud com 15+ anos em transformação digital segura nos setores de governo, finanças e seguros. Na Intact, reduziu o tempo de detecção de vulnerabilidades de 4 horas para 20 minutos. Trilíngue: EN / FR / PT." },
-      ],
+      title: "Experiência comprovada para problemas reais",
+      intro: "Nossa equipe reúne mais de 15 anos de experiência em tecnologia, segurança cloud e engenharia de aplicações em organizações do Canadá e do Brasil.",
+      areas: ["Tecnologia", "Segurança cloud", "Engenharia de aplicações"],
     },
     status: {
       label: "Status atual",
@@ -111,23 +88,24 @@ const translations = {
     contact: {
       label: "Contato",
       title: "Pronto para começar?",
-      text: "Diagnóstico inicial gratuito — sem compromisso. Nos conta o seu problema e encontramos a solução certa.",
-      button: "contact@noverix.com",
+      text: "Diagnóstico inicial gratuito — sem compromisso. Nos conta o seu problema e encontramos a solução certa. O domínio está disponível — entre em contato conosco.",
+      form: { name: "Seu nome", email: "Seu e-mail", message: "Como podemos ajudar?", submit: "Enviar mensagem", sending: "Enviando...", success: "Mensagem enviada. Em breve entraremos em contato.", error: "Não foi possível enviar a mensagem. Tente novamente." },
     },
-    footer: { tagline: "Tecnologia que simplifica o seu negócio.", rights: "Todos os direitos reservados." },
+    footer: {
+      byline: "Tecnologia que simplifica o seu negócio.",
+      copyright: `© ${new Date().getFullYear()} Noverix. Todos os direitos reservados.` },
     comingSoon: "Em breve",
   },
   en: {
     header: { logoLabel: "Noverix home" },
-    nav: { about: "About", services: "Services", products: "Products", team: "Team", contact: "Contact" },
+    nav: { about: "About", services: "Services", team: "Team", contact: "Contact" },
     hero: {
       eyebrow: "Technology for small businesses",
       title: "Your business deserves a custom web application.",
       text: "We build tailor-made web applications for micro and small businesses — with ongoing support, no complexity, and real results.",
       primaryCta: "Start now",
-      secondaryCta: "See our products →",
       signals: [
-        { value: "3", label: "Expert founders" },
+        { value: "15+", label: "Years of staff experience" },
         { value: "15+", label: "Years combined" },
         { value: "100%", label: "Focus on SMEs" },
       ],
@@ -178,32 +156,11 @@ const translations = {
         { title: "Launch + Monthly support", text: "Your app goes live. A monthly support plan ensures continuous evolution, fixes, and ongoing security." },
       ],
     },
-    products: {
-      kicker: "Our products",
-      title: "Solutions already live",
-      intro: "Beyond custom projects, Noverix builds its own products — real tools for real needs.",
-      avelix: {
-        kicker: "Official product",
-        text: "Our first official web application — a platform that showcases the potential of Noverix solutions for small businesses. A real, functional product, delivered.",
-        features: [
-          "Complete and responsive web application",
-          "Modern and intuitive interface",
-          "Secure cloud infrastructure",
-          "Continuous support and evolution",
-          "Business model with recurring revenue via monthly support",
-        ],
-        cta: "Visit Avelix →",
-      },
-    },
-    founders: {
+    staff: {
       kicker: "The team",
-      title: "The founders behind Noverix",
-      intro: "A trilingual team of technology specialists with decades of combined experience in large organizations across Canada and Brazil.",
-      people: [
-        { role: "Co-founder · Identity Security", bio: "IAM specialist with experience in large-scale Azure environments in Canada's public and healthcare sectors. Secured over 330,000 employees in Québec's health network via SSO and Microsoft Entra ID. Certified ITIL V4 and Microsoft Applied Skills." },
-        { role: "Co-founder · Cloud Security", bio: "Senior Cloud Security Advisor with 10+ years in critical Azure environments for SAAQ, iA Financial Group, and Ville de Laval. Managed 400+ Azure subscriptions. Certifications: AZ-500, AZ-305, CompTIA Security+, ISO 27002." },
-        { role: "Co-founder · Engineering & AppSec", bio: "Cloud security engineer with 15+ years in secure digital transformation across government, finance, and insurance. At Intact, reduced vulnerability detection from 4 hours to 20 minutes. Trilingual: EN / FR / PT." },
-      ],
+      title: "Proven experience for real problems",
+      intro: "Our staff brings more than 15 years of combined experience in technology, cloud security, and application engineering across organizations in Canada and Brazil.",
+      areas: ["Technology", "Cloud security", "Application engineering"],
     },
     status: {
       label: "Current status",
@@ -213,23 +170,24 @@ const translations = {
     contact: {
       label: "Contact",
       title: "Ready to start?",
-      text: "Free initial diagnosis — no commitment. Tell us your problem and we will find the right solution.",
-      button: "contact@noverix.com",
+      text: "Free initial diagnosis — no commitment. Tell us your problem and we will find the right solution. The domain is available — contact us.",
+      form: { name: "Your name", email: "Your email", message: "How can we help?", submit: "Send message", sending: "Sending...", success: "Message sent. We will be in touch soon.", error: "We could not send your message. Please try again." },
     },
-    footer: { tagline: "Technology that simplifies your business.", rights: "All rights reserved." },
+    footer: {
+      byline: "Technology that simplifies your business.",
+      copyright: `© ${new Date().getFullYear()} Noverix. All rights reserved.` },
     comingSoon: "Coming soon",
   },
   fr: {
     header: { logoLabel: "Noverix accueil" },
-    nav: { about: "À propos", services: "Services", products: "Produits", team: "Équipe", contact: "Contact" },
+    nav: { about: "À propos", services: "Services", team: "Équipe", contact: "Contact" },
     hero: {
       eyebrow: "Technologie pour les petites entreprises",
       title: "Votre entreprise mérite une application web sur mesure.",
       text: "Nous développons des applications web personnalisées pour les micro et petites entreprises — avec un support continu, sans complexité, avec de vrais résultats.",
       primaryCta: "Commencer maintenant",
-      secondaryCta: "Voir nos produits →",
       signals: [
-        { value: "3", label: "Fondateurs experts" },
+        { value: "15+", label: "Années d'expérience de l'équipe" },
         { value: "15+", label: "Années combinées" },
         { value: "100%", label: "Focus PME" },
       ],
@@ -280,32 +238,11 @@ const translations = {
         { title: "Lancement + Support mensuel", text: "Votre app est mise en ligne. Un plan de support mensuel assure l'évolution continue, les corrections et la sécurité." },
       ],
     },
-    products: {
-      kicker: "Nos produits",
-      title: "Des solutions déjà en ligne",
-      intro: "Au-delà des projets sur mesure, Noverix développe ses propres produits — de vrais outils pour de vrais besoins.",
-      avelix: {
-        kicker: "Produit officiel",
-        text: "Notre première application web officielle — une plateforme qui démontre le potentiel des solutions Noverix pour les petites entreprises. Un produit réel, fonctionnel, livré.",
-        features: [
-          "Application web complète et responsive",
-          "Interface moderne et intuitive",
-          "Infrastructure cloud sécurisée",
-          "Support et évolution continus",
-          "Modèle économique avec revenus récurrents via le support mensuel",
-        ],
-        cta: "Visiter Avelix →",
-      },
-    },
-    founders: {
+    staff: {
       kicker: "L'équipe",
-      title: "Les fondateurs derrière Noverix",
-      intro: "Une équipe trilingue de spécialistes en technologie avec des décennies d'expérience combinée dans de grandes organisations au Canada et au Brésil.",
-      people: [
-        { role: "Co-fondateur · Sécurité des identités", bio: "Spécialiste IAM avec une expérience dans des environnements Azure à grande échelle dans les secteurs public et de la santé au Canada. A sécurisé plus de 330 000 employés du réseau de santé du Québec via SSO et Microsoft Entra ID." },
-        { role: "Co-fondateur · Sécurité Cloud", bio: "Conseiller senior en sécurité cloud avec 10+ ans dans des environnements Azure critiques pour la SAAQ, iA Groupe Financier et la Ville de Laval. A géré plus de 400 abonnements Azure. Certifications : AZ-500, AZ-305, CompTIA Security+, ISO 27002." },
-        { role: "Co-fondatrice · Ingénierie & AppSec", bio: "Ingénieure en sécurité cloud avec 15+ ans en transformation numérique sécurisée dans les secteurs gouvernemental, financier et des assurances. Chez Intact, a réduit le temps de détection des vulnérabilités de 4 heures à 20 minutes. Trilingue : EN / FR / PT." },
-      ],
+      title: "Une expérience éprouvée pour de vrais problèmes",
+      intro: "Notre équipe cumule plus de 15 ans d'expérience en technologie, sécurité cloud et ingénierie applicative auprès d'organisations au Canada et au Brésil.",
+      areas: ["Technologie", "Sécurité cloud", "Ingénierie applicative"],
     },
     status: {
       label: "Statut actuel",
@@ -315,23 +252,25 @@ const translations = {
     contact: {
       label: "Contact",
       title: "Prêt à commencer ?",
-      text: "Diagnostic initial gratuit — sans engagement. Parlez-nous de votre problème et nous trouverons la bonne solution.",
-      button: "contact@noverix.com",
+      text: "Diagnostic initial gratuit — sans engagement. Parlez-nous de votre problème et nous trouverons la bonne solution. Le domaine est disponible — contactez-nous.",
+      form: { name: "Votre nom", email: "Votre courriel", message: "Comment pouvons-nous vous aider ?", submit: "Envoyer le message", sending: "Envoi...", success: "Message envoyé. Nous vous contacterons bientôt.", error: "Votre message n'a pas pu être envoyé. Veuillez réessayer." },
     },
-    footer: { tagline: "Une technologie qui simplifie votre entreprise.", rights: "Tous droits réservés." },
+    footer: {
+      byline: "Une technologie qui simplifie votre entreprise.",
+      copyright: `© ${new Date().getFullYear()} Noverix. Tous droits réservés.` },
+
     comingSoon: "Bientôt disponible",
   },
 } satisfies Record<
   Locale,
   {
     header: { logoLabel: string };
-    nav: { about: string; services: string; products: string; team: string; contact: string };
+    nav: { about: string; services: string; team: string; contact: string };
     hero: {
       eyebrow: string;
       title: string;
       text: string;
       primaryCta: string;
-      secondaryCta: string;
       signals: { value: string; label: string }[];
       panel: { label: string; title: string; points: { title: string; text: string }[] };
     };
@@ -343,42 +282,15 @@ const translations = {
     };
     services: { kicker: string; title: string; intro: string; items: { title: string; text: string }[] };
     model: { kicker: string; title: string; text: string; steps: { title: string; text: string }[] };
-    products: {
-      kicker: string;
-      title: string;
-      intro: string;
-      avelix: { kicker: string; text: string; features: string[]; cta: string };
-    };
-    founders: { kicker: string; title: string; intro: string; people: { role: string; bio: string }[] };
+    staff: { kicker: string; title: string; intro: string; areas: string[] };
     status: { label: string; title: string; text: string };
-    contact: { label: string; title: string; text: string; button: string };
-    footer: { tagline: string; rights: string };
+    contact: { label: string; title: string; text: string; form: { name: string; email: string; message: string; submit: string; sending: string; success: string; error: string } };
+    footer: { copyright: string; byline: string };
     comingSoon: string;
   }
 >;
 
 type Copy = (typeof translations)[Locale];
-
-const founders = [
-  {
-    initials: "AF",
-    name: "Antonio Ferreira",
-    linkedin: "https://www.linkedin.com/in/antoniofos/",
-    tags: ["Azure AD", "IAM", "SSO / OAuth2", "PowerShell"],
-  },
-  {
-    initials: "FN",
-    name: "Fabiano N. Costa",
-    linkedin: "https://www.linkedin.com/in/costa-fabiano/",
-    tags: ["Azure Security", "CSPM", "Zero Trust"],
-  },
-  {
-    initials: "HR",
-    name: "Heloisa R.",
-    linkedin: "https://www.linkedin.com/in/hel-isa/",
-    tags: ["Application Security", "AI", "DevSecOps", "Shift Left Security"],
-  },
-];
 
 const surfaceCard =
   "rounded-[28px] border border-[var(--nv-line)] bg-[linear-gradient(180deg,rgba(255,255,255,0.98),rgba(247,250,255,0.96))] shadow-[0_24px_60px_rgba(0,0,0,0.5)] backdrop-blur-[14px] text-[var(--nv-text-strong)]";
@@ -388,22 +300,6 @@ const surfaceHover =
 
 function splitSentences(text: string): string[] {
   return text.match(/[^.!?]+[.!?]+|[^.!?]+$/g)?.map((part) => part.trim()) ?? [text];
-}
-
-function NoverixMark({ className }: { className?: string }) {
-  return (
-    <svg viewBox="0 0 44 44" fill="none" className={className} aria-hidden="true">
-      <defs>
-        <linearGradient id="nv-mark-stroke" x1="10" y1="10" x2="34" y2="34" gradientUnits="userSpaceOnUse">
-          <stop stopColor="#57D9FF" />
-          <stop offset="1" stopColor="#1DB5D9" />
-        </linearGradient>
-      </defs>
-      <path d="M12 31V13L22.2 26V13H25.8V31L15.6 18V31H12Z" fill="#10233D" />
-      <path d="M29.7 31V13H33.3V24.2L37 21.8V25.7L33.3 28.1V31H29.7Z" fill="url(#nv-mark-stroke)" />
-      <path d="M29.7 17.2L37 12.4V16.3L29.7 21V17.2Z" fill="#7BE8FF" opacity="0.82" />
-    </svg>
-  );
 }
 
 function LinkedInIcon({ className }: { className?: string }) {
@@ -450,23 +346,20 @@ function Header({
   const navItems: { href: string; label: string }[] = [
     { href: "#about", label: copy.nav.about },
     { href: "#services", label: copy.nav.services },
-    { href: "#produtos", label: copy.nav.products },
-    { href: "#founders", label: copy.nav.team },
+    { href: "#staff", label: copy.nav.team },
     { href: "#contact", label: copy.nav.contact },
   ];
 
   return (
     <header className="sticky top-0 z-40 px-4 pt-3 sm:px-6">
       <div className="mx-auto flex max-w-[1140px] flex-wrap items-center justify-between gap-3 rounded-[30px] border border-[rgba(16,35,61,0.1)] bg-[linear-gradient(135deg,rgba(255,255,255,0.96),rgba(237,245,255,0.94))] px-4 py-3 shadow-[0_16px_40px_rgba(0,0,0,0.25)] backdrop-blur-[18px] sm:px-5">
-        <a href="#" aria-label={copy.header.logoLabel}>
-          <Image
-            src="https://394c556d9094713a744256daecd60163.r2.cloudflarestorage.com/noverix-assets/logo/noverix-logo-no-background.png"
+        <a href="#" aria-label={copy.header.logoLabel} className="inline-flex items-center">
+          <img
+            src="/assets/noverix-logo.png"
             alt="Noverix"
-            width={142}
-            height={36}
-            priority
-            unoptimized
-            className="h-20 w-auto object-contain"
+            width={520}
+            height={140}
+            className="h-12 w-auto object-contain sm:h-13"
           />
         </a>
 
@@ -528,12 +421,6 @@ function Hero({ copy }: { copy: Copy }) {
               className="inline-flex min-h-[52px] items-center justify-center rounded-full bg-gradient-to-br from-[var(--nv-accent-soft)] to-[var(--nv-accent)] px-6 font-extrabold text-[#0b0f15] shadow-[0_10px_25px_var(--nv-accent-glow)] transition hover:-translate-y-0.5"
             >
               {copy.hero.primaryCta}
-            </a>
-            <a
-              href="#produtos"
-              className="inline-flex min-h-[52px] items-center justify-center rounded-full border border-[rgba(16,35,61,0.12)] bg-white/95 px-6 font-extrabold text-[var(--nv-brand-navy)] shadow-[0_12px_24px_rgba(16,35,61,0.08)] transition hover:-translate-y-0.5"
-            >
-              {copy.hero.secondaryCta}
             </a>
           </div>
           <div className="grid max-w-[760px] grid-cols-3 gap-3">
@@ -659,88 +546,23 @@ function ModelSection({ copy }: { copy: Copy }) {
   );
 }
 
-function ProductsSection({ copy, locale }: { copy: Copy; locale: Locale }) {
+function StaffSection({ copy }: { copy: Copy }) {
   return (
-    <section id="produtos" className="py-8">
-      <SectionIntro kicker={copy.products.kicker} title={copy.products.title} text={copy.products.intro} />
+    <section id="staff" className="py-8">
       <div className="mx-auto max-w-[1140px] px-4 sm:px-6">
-        <article className={`${surfaceCard} grid overflow-hidden lg:grid-cols-2`}>
-          <div className="flex flex-col justify-center gap-3 p-8 sm:p-10">
-            <p className="text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--nv-accent)]">
-              {copy.products.avelix.kicker}
-            </p>
-            <h3 className="nv-heading text-4xl font-bold">
-              Avelix<span className="text-[var(--nv-accent-soft)]">.com.br</span>
-            </h3>
-            <p className="text-[var(--nv-text-muted-strong)]">{copy.products.avelix.text}</p>
-            <ul className="my-2 grid gap-2">
-              {copy.products.avelix.features.map((feature) => (
-                <li key={feature} className="relative pl-6 text-sm text-[var(--nv-text-muted-strong)]">
-                  <span className="absolute left-0 font-bold text-[var(--nv-accent-warm)]">✓</span>
-                  {feature}
-                </li>
-              ))}
-            </ul>
-            <a
-              href="https://avelix.com.br"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex min-h-[52px] w-fit items-center justify-center rounded-full bg-gradient-to-br from-[var(--nv-accent-soft)] to-[var(--nv-accent)] px-6 font-extrabold text-[#0b0f15] shadow-[0_10px_25px_var(--nv-accent-glow)] transition hover:-translate-y-0.5"
-            >
-              {copy.products.avelix.cta}
-            </a>
-          </div>
-          <div className="flex min-h-[320px] items-center justify-center bg-[linear-gradient(135deg,#e8f4ff,#ddeeff)] px-8 py-10">
-            <AvelixAppPreview locale={locale} />
+        <article className={`${surfaceCard} ${surfaceHover} p-8 sm:p-10`}>
+          <SectionIntro kicker={copy.staff.kicker} title={copy.staff.title} text={copy.staff.intro} />
+          <div className="grid gap-3 sm:grid-cols-3">
+            {copy.staff.areas.map((area, index) => (
+              <div key={area} className="rounded-2xl border border-[rgba(95,129,174,0.12)] bg-[rgba(248,251,255,0.94)] p-4">
+                <span className="nv-heading mb-2 block text-sm font-bold text-[var(--nv-accent-warm)]">
+                  {String(index + 1).padStart(2, "0")}
+                </span>
+                <p className="font-semibold text-[var(--nv-text-strong)]">{area}</p>
+              </div>
+            ))}
           </div>
         </article>
-      </div>
-    </section>
-  );
-}
-
-function FoundersSection({ copy }: { copy: Copy }) {
-  return (
-    <section id="founders" className="py-8">
-      <SectionIntro kicker={copy.founders.kicker} title={copy.founders.title} text={copy.founders.intro} />
-      <div className="mx-auto grid max-w-[1140px] gap-5 px-4 sm:px-6 lg:grid-cols-3">
-        {founders.map((founder, index) => {
-          const person = copy.founders.people[index];
-          return (
-            <article
-              key={founder.name}
-              className={`${surfaceCard} flex flex-col gap-2.5 p-7 transition-colors duration-300 hover:border-[var(--nv-line-strong)] hover:shadow-[0_28px_64px_rgba(29,57,98,0.14)]`}
-            >
-              <div className="nv-heading flex h-14 w-14 items-center justify-center rounded-full bg-gradient-to-br from-[var(--nv-accent-soft)] to-[var(--nv-accent-warm)] text-lg font-bold text-white">
-                {founder.initials}
-              </div>
-              <h3 className="nv-heading mt-1 text-lg font-bold">{founder.name}</h3>
-              <p className="text-xs font-bold tracking-[0.1em] text-[var(--nv-accent-warm)] uppercase">
-                {person.role}
-              </p>
-              <p className="text-sm leading-[1.65] text-[var(--nv-text-muted-strong)]">{person.bio}</p>
-              <div className="mt-1 flex flex-wrap gap-1.5">
-                {founder.tags.map((tag) => (
-                  <span
-                    key={tag}
-                    className="rounded-full border border-[rgba(0,229,229,0.2)] bg-[rgba(0,229,229,0.08)] px-2.5 py-1 text-[11px] font-semibold tracking-[0.04em] text-[var(--nv-accent-soft)]"
-                  >
-                    {tag}
-                  </span>
-                ))}
-              </div>
-              <a
-                href={founder.linkedin}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="mt-2 inline-flex w-fit items-center gap-1.5 text-sm font-semibold text-[var(--nv-text-muted-strong)] transition hover:text-[var(--nv-accent-soft)]"
-              >
-                <LinkedInIcon className="h-3.5 w-3.5" />
-                LinkedIn
-              </a>
-            </article>
-          );
-        })}
       </div>
     </section>
   );
@@ -757,7 +579,7 @@ function StatusContactSection({ copy }: { copy: Copy }) {
           <h2 className="nv-heading mb-4 text-3xl font-bold">{copy.status.title}</h2>
           <p className="text-[var(--nv-text-muted-strong)]">{copy.status.text}</p>
         </article>
-        <article id="contact" className={`${surfaceCard} flex flex-col justify-between p-7`}>
+        <article id="contact" className={`${surfaceCard} p-7`}>
           <div>
             <p className="mb-4 text-xs font-extrabold uppercase tracking-[0.14em] text-[var(--nv-accent)]">
               {copy.contact.label}
@@ -765,12 +587,9 @@ function StatusContactSection({ copy }: { copy: Copy }) {
             <h2 className="nv-heading mb-4 text-3xl font-bold">{copy.contact.title}</h2>
             <p className="text-[var(--nv-text-muted-strong)]">{copy.contact.text}</p>
           </div>
-          <a
-            href="mailto:contact@noverix.com"
-            className="mt-6 inline-flex min-h-[52px] w-fit items-center justify-center rounded-full bg-gradient-to-br from-[var(--nv-accent-soft)] to-[var(--nv-accent)] px-6 font-extrabold text-[#0b0f15] shadow-[0_10px_25px_var(--nv-accent-glow)] transition hover:-translate-y-0.5"
-          >
-            {copy.contact.button}
-          </a>
+          <div className="mt-6">
+            <ContactForm copy={copy.contact.form} />
+          </div>
         </article>
       </div>
     </section>
@@ -780,48 +599,22 @@ function StatusContactSection({ copy }: { copy: Copy }) {
 function Footer({ copy }: { copy: Copy }) {
   const socials = [
     { icon: LinkedInIcon, label: "LinkedIn", href: "https://www.linkedin.com/company/noverix" },
-    { icon: FacebookIcon, label: "Facebook", href: "https://www.facebook.com/share/18d7ZkLouF/" },
-    { icon: InstagramIcon, label: copy.comingSoon, href: null },
-    { icon: XIcon, label: copy.comingSoon, href: null },
-  ];
-
-  const navItems: { href: string; label: string }[] = [
-    { href: "#about", label: copy.nav.about },
-    { href: "#services", label: copy.nav.services },
-    { href: "#produtos", label: copy.nav.products },
-    { href: "#founders", label: copy.nav.team },
-    { href: "#contact", label: copy.nav.contact },
+    // { icon: FacebookIcon, label: copy.comingSoon, href: null },
+    // { icon: InstagramIcon, label: copy.comingSoon, href: null },
+    // { icon: XIcon, label: copy.comingSoon, href: null },
   ];
 
   return (
-    <footer className="px-4 pt-8 sm:px-6">
-      <div className="mx-auto max-w-[1140px]">
-        <div className="rounded-[30px] border border-[rgba(123,232,255,0.12)] bg-[linear-gradient(160deg,rgba(13,20,31,0.96),rgba(10,15,25,0.96))] px-5 py-6 shadow-[0_26px_60px_rgba(0,0,0,0.35)] sm:px-8 sm:py-7">
-          <div className="flex flex-wrap items-start justify-between gap-6 border-b border-[rgba(123,232,255,0.14)] pb-6">
-            <div className="max-w-[560px]">
-              <div className="flex items-center gap-3">
-                <NoverixMark className="h-10 w-10" />
-                <div>
-                  <div className="nv-heading text-base font-bold tracking-[0.12em] text-white">NOVERIX</div>
-                  <div className="mt-1 text-[11px] font-semibold tracking-[0.14em] text-[var(--nv-accent)] uppercase">
-                    Cloud • AppSec • Apps
-                  </div>
-                </div>
-              </div>
-              <p className="mt-4 max-w-[52ch] text-sm leading-relaxed text-[var(--nv-text-muted)]">{copy.footer.tagline}</p>
-              <div className="mt-5 flex flex-wrap gap-2.5">
-                {navItems.map((item) => (
-                  <a
-                    key={item.href}
-                    href={item.href}
-                    className="rounded-full border border-[rgba(123,232,255,0.18)] px-3 py-1.5 text-xs font-semibold tracking-[0.06em] text-[var(--nv-text)] transition hover:border-[var(--nv-accent)] hover:text-white"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            </div>
-            <div className="flex items-end gap-2.5">
+    <footer className="rounded-[30px] border border-[rgba(123,232,255,0.12)] bg-[linear-gradient(160deg,rgba(13,20,31,0.96),rgba(10,15,25,0.96))] px-5 py-6 shadow-[0_26px_60px_rgba(0,0,0,0.35)] sm:px-8 sm:py-7">
+      <div className="mx-auto max-w-7xl space-y-6">
+        <div className="text-center text-sm text-[var(--nv-text-muted)]">
+          <p className="font-semibold text-[var(--nv-text)]">{copy.footer.copyright}</p>
+          <p className="mt-2">{copy.footer.byline}</p>
+        </div>
+
+        <div className="flex justify-end border-t border-[rgba(123,232,255,0.12)] pt-6 text-sm text-[var(--nv-text-muted)]">
+          <div>
+            <div className="flex items-end gap-2.5 sm:justify-end">
               {socials.map((social, index) => (
                 <div key={social.href ?? `coming-soon-${index}`} className="flex flex-col items-center gap-1.5">
                   {social.href ? (
@@ -848,15 +641,6 @@ function Footer({ copy }: { copy: Copy }) {
                 </div>
               ))}
             </div>
-          </div>
-
-          <div className="flex flex-col justify-between gap-4 pt-6 text-sm text-[var(--nv-text-muted)] sm:flex-row sm:items-center">
-            <small>
-              © {new Date().getFullYear()} Noverix. {copy.footer.rights}
-            </small>
-            <a href="mailto:contact@noverix.com" className="font-semibold text-[var(--nv-text)] hover:text-white">
-              contact@noverix.com
-            </a>
           </div>
         </div>
       </div>
@@ -928,8 +712,7 @@ export default function Home() {
         <AboutSection copy={copy} />
         <ServicesSection copy={copy} />
         <ModelSection copy={copy} />
-        <ProductsSection copy={copy} locale={locale} />
-        <FoundersSection copy={copy} />
+        <StaffSection copy={copy} />
         <StatusContactSection copy={copy} />
       </main>
       <Footer copy={copy} />

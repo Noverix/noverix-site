@@ -67,25 +67,3 @@ a {
   font-family: var(--font-space-grotesk), "Space Grotesk", sans-serif;
   letter-spacing: -0.03em;
 }
-
-@keyframes avelix-float {
-  0%,
-  100% {
-    transform: translateY(0);
-  }
-
-  50% {
-    transform: translateY(-10px);
-  }
-}
-
-.floating-panel,
-.float-chip {
-  animation: avelix-float 5.6s ease-in-out infinite;
-}
-
-@media (max-width: 1023px) {
-  .float-chip {
-    display: none;
-  }
-}

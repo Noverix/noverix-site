@@ -18,6 +18,10 @@ export const metadata: Metadata = {
   title: "Noverix | Tecnologia que simplifica o seu negócio",
   description:
     "Noverix desenvolve aplicações web sob medida para micro e pequenas empresas, com suporte contínuo e segurança desde o primeiro dia.",
+  icons: {
+    icon: "/assets/noverix-logo.png",
+    apple: "/assets/noverix-logo.png",
+  },
 };
 
 export default function RootLayout({
